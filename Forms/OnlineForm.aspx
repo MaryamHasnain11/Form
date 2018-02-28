@@ -10,28 +10,28 @@
     <form id="form1" runat="server">
         <div>
         	First Name<br />
-			<asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+			<asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" ></asp:TextBox>
 			<br />
 			<br />
 			Last Name<br />
-			<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+			<asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
 			<br />
 			<br />
 			Email<br />
-			<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+			<asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
 			<br />
 			<br />
 			Country<br />
 			<br />
-			<asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+			<asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBox4_TextChanged"></asp:TextBox>
 			<br />
 			<br />
 			
 			Gender<br />
-&nbsp;<asp:RadioButton ID="rb1" Text="Male" runat="server" />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<asp:RadioButton ID="rb2" Text="Female" runat="server" />
-		
+<asp:RadioButtonList ID="rb" runat="server" RepeatLayout="Flow" OnSelectedIndexChanged="rb_SelectedIndexChanged">
+    <asp:ListItem Value="Male">Male</asp:ListItem>
+    <asp:ListItem Value="Female">Female</asp:ListItem>
+</asp:RadioButtonList>
         	<br />
 		
         	<br />

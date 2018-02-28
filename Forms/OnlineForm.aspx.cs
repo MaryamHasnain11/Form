@@ -26,23 +26,24 @@ namespace Forms
 			String lName = TextBox2.Text.ToString();
 			String email = TextBox3.Text.ToString();
 			String country = TextBox4.Text.ToString();
-
+			string gender = rb.SelectedItem.Value.ToString();
 			OleDbConnection conn = new OleDbConnection();
 			//Use a string variable to hold the ConnectionString.
 			conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;"
-			+ "Data Source=C:\\Users\\Intag\\Documents\\GitHub\\cms2\\Forms\\App_Data\\Database2.accdb";
+			+ "Data Source=C:\\Users\\Intag\\Documents\\GitHub\\Form\\Forms\\App_Data\\Database3.accdb";
 
 
 
 
 
 			//new
-			String query = @"INSERT INTO Users (FirstName,LastName,Username,Pasword) VALUES(@fName,@lname,@userName,@pasword)";
+			String query = @"INSERT INTO Users (FirstName,LastName,Email,Country,Gender) VALUES(@fName,@lname,@email,@country,@gender)";
 			System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(query, conn);
 			cmd.Parameters.AddWithValue("@fName", fName);
 			cmd.Parameters.AddWithValue("@lName", lName);
-			cmd.Parameters.AddWithValue("@userName", userName);
-			cmd.Parameters.AddWithValue("@pasword", pasword);
+			cmd.Parameters.AddWithValue("@email", email);
+			cmd.Parameters.AddWithValue("@country", country);
+			cmd.Parameters.AddWithValue("@gender", gender);
 
 			conn.Open();
 
@@ -50,7 +51,27 @@ namespace Forms
 
 
 			cmd.ExecuteNonQuery();
-			Response.Write("<script>alert('Registration successful');</script>");
+			Response.Write("<script>alert('Form Successfully Submitted');</script>");
+		}
+
+		protected void TextBox2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		protected void TextBox3_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		protected void TextBox4_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		protected void rb_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
